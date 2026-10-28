@@ -1,409 +1,546 @@
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ENORA | The Founder's Handbook</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root {
-  --navy: #10233F;
-  --gold: #C6A45C;
-  --white: #FFFFFF;
-  --light: #F4F6F9;
-  --text: #263449;
-}
+    <title>Golden Honey & Gold Chips | NUUF TRADING</title>
+    <meta name="description" content="Discover Golden Honey and Gold Chips by NUUF TRADING, a food manufacturing company in Addis Ababa, Ethiopia.">
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    <style>
+        /* ===== 1. COLORS AND RESET ===== */
+        :root {
+            --black: #0A0A0A;
+            --gold: #D4A017;
+            --amber: #F4B400;
+            --honey: #A65A14;
+            --white: #FFFFFF;
+            --cream: #F8F4EC;
+            --text: #444444;
+        }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--light);
-  color: var(--text);
-  line-height: 1.7;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.cover {
-  min-height: 100vh;
-  background: var(--navy);
-  color: var(--white);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px 22px;
-  border-bottom: 8px solid var(--gold);
-}
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 20px;
+        }
 
-.logo {
-  font-size: clamp(48px, 10vw, 86px);
-  letter-spacing: 10px;
-  font-weight: 900;
-  color: var(--gold);
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+        }
 
-.tagline {
-  font-size: 17px;
-  letter-spacing: 2px;
-  margin: 8px 0 35px;
-}
+        a {
+            color: inherit;
+        }
 
-.line {
-  width: 100px;
-  height: 3px;
-  background: var(--gold);
-  margin: 0 auto 35px;
-}
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.cover h1 {
-  font-size: clamp(28px, 6vw, 48px);
-  text-transform: uppercase;
-  line-height: 1.25;
-  max-width: 750px;
-}
+        /* ===== 2. HEADER AND NAVIGATION ===== */
+        header {
+            background: var(--black);
+            padding: 20px 0;
+        }
 
-.subtitle {
-  color: var(--gold);
-  font-size: 20px;
-  margin-top: 22px;
-}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
 
-.cover p:last-child {
-  margin-top: 14px;
-  max-width: 600px;
-}
+        .logo {
+            color: var(--gold);
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 30px 20px 60px;
-}
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 18px;
+        }
 
-.section-title {
-  color: var(--navy);
-  font-size: 28px;
-  margin: 35px 0 20px;
-  border-bottom: 3px solid var(--gold);
-  padding-bottom: 10px;
-}
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-.intro {
-  background: var(--white);
-  padding: 25px;
-  border-left: 5px solid var(--gold);
-  margin-bottom: 35px;
-  border-radius: 5px;
-}
+        nav a:hover,
+        nav a:focus-visible {
+            color: var(--gold);
+        }
 
-.chapter {
-  background: var(--white);
-  margin: 14px 0;
-  padding: 20px;
-  border-radius: 7px;
-  border: 1px solid #E1E6ED;
-  page-break-inside: avoid;
-}
+        /* ===== 3. HERO SECTION ===== */
+        .hero {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 110px 20px;
+        }
 
-.chapter h3 {
-  color: var(--navy);
-  font-size: 18px;
-  margin-bottom: 8px;
-}
+        .hero h1 {
+            color: var(--amber);
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
 
-.number {
-  color: var(--gold);
-  font-weight: bold;
-  margin-right: 8px;
-}
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 0;
+        }
 
-.chapter p {
-  font-size: 15px;
-}
+        /* ===== 4. GENERAL SECTIONS ===== */
+        section {
+            padding: 70px 0;
+        }
 
-.reminder {
-  background: var(--navy);
-  color: var(--white);
-  padding: 25px;
-  border-radius: 7px;
-  margin-top: 30px;
-}
+        .white {
+            background: var(--white);
+        }
 
-.reminder h3 {
-  color: var(--gold);
-  margin-bottom: 10px;
-}
+        .cream {
+            background: var(--cream);
+        }
 
-footer {
-  background: var(--navy);
-  color: var(--white);
-  text-align: center;
-  padding: 25px 15px;
-  border-top: 4px solid var(--gold);
-}
+        h2 {
+            color: var(--honey);
+            text-align: center;
+            font-size: clamp(28px, 4vw, 38px);
+            margin-bottom: 30px;
+        }
 
-footer strong {
-  color: var(--gold);
-}
+        h3 {
+            color: var(--honey);
+            margin-bottom: 15px;
+        }
 
-@media print {
-  body {
-    background: white;
-  }
+        h4 {
+            color: var(--honey);
+            margin: 20px 0 10px;
+        }
 
-  .cover {
-    min-height: 95vh;
-    page-break-after: always;
-  }
+        p {
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
 
-  .container {
-    max-width: 100%;
-    padding: 15px;
-  }
+        strong {
+            color: var(--honey);
+        }
 
-  .chapter {
-    break-inside: avoid;
-  }
-}
-</style>
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== 5. CARDS AND GRIDS ===== */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(min(100%, 280px), 1fr)
+            );
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .card ul {
+            padding-left: 22px;
+        }
+
+        .card li {
+            margin-bottom: 10px;
+        }
+
+        .card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== 6. CONTACT LINKS ===== */
+        .contact-link {
+            color: var(--honey);
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== 7. FOOTER ===== */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        footer span {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* ===== 8. RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            .card {
+                padding: 22px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- COVER PAGE -->
-<header class="cover">
-  <div class="logo">ENORA</div>
+    <!-- HEADER -->
+    <header>
+        <div class="container navbar">
+            <a href="#welcome" class="logo">
+                Golden Honey Foods Industry
+            </a>
 
-  <div class="tagline">
-    Evolving New Opportunities, Rising Always
-  </div>
+            <nav aria-label="Main navigation">
+                <a href="#welcome">Home</a>
+                <a href="#about">About</a>
+                <a href="#mission">Mission</a>
+                <a href="#vision">Vision</a>
+                <a href="#quality">Quality</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-  <div class="line"></div>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Golden Honey &amp; Gold Chips</h1>
+            <p>
+                Quality &bull; Freshness &bull; Food Safety
+                &bull; Customer Satisfaction
+            </p>
+        </div>
+    </section>
 
-  <h1>The Founder's Handbook</h1>
+    <!-- HOME -->
+    <section id="welcome" class="cream">
+        <div class="container">
+            <h2>Welcome to Our Company</h2>
 
-  <div class="subtitle">
-    From Employer to World-Class Company
-  </div>
+            <p>
+                Welcome to <strong>Golden Honey &amp; Gold Chips</strong>,
+                a food brand of NUUF TRADING. We are committed to producing
+                honey and snack products with a focus on quality, food safety,
+                and customer satisfaction.
+            </p>
 
-  <p>
-    A 10-Year Roadmap to Building a World-Class Company
-  </p>
-  <h3 style="color: rgb(184, 104, 150);">Dedicated To My MOM Enaney Asre</h3>
-    
-  
-</header>
+            <p>
+                Through responsible production practices and continuous
+                improvement, we aim to deliver reliable products that our
+                customers can enjoy and trust.
+            </p>
+        </div>
+    </section>
 
-<main class="container">
+    <!-- ABOUT -->
+    <section id="about" class="white">
+        <div class="container">
+            <h2>About Us</h2>
 
-  <!-- INTRODUCTION -->
-  <section class="intro">
-    <h2 class="section-title">Welcome to ENORA</h2>
+            <p>
+                We are a food manufacturing company focused on honey
+                processing and potato chips production. Our goal is to
+                provide products that combine good taste, consistent quality,
+                and safe handling.
+            </p>
 
-    <p>
-      ENORA represents the commitment to keep evolving,
-      discover new opportunities, rise through challenges,
-      and build a company that creates lasting value.
-    </p>
+            <p>
+                We value honesty, innovation, teamwork, and continuous
+                improvement. We work to meet customer needs while creating
+                long-term value for our customers, employees, and community.
+            </p>
+        </div>
+    </section>
 
-    <p>
-      This handbook is a personal guide for developing the
-      mindset, knowledge, leadership, systems, and discipline
-      required to build a world-class company over ten years.
-    </p>
-  </section>
+    <!-- MISSION -->
+    <section id="mission" class="cream">
+        <div class="container">
+            <h2>Our Mission</h2>
 
-  <!-- TABLE OF CONTENTS -->
-  <section>
-    <h2 class="section-title">Table of Contents</h2>
+            <p>
+                Our mission is to produce and deliver safe, high-quality
+                food products that meet customer expectations and applicable
+                food safety requirements.
+            </p>
 
-    <div class="chapter">
-      <h3><span class="number">01.</span>My Life Mission</h3>
-      <p>
-        Discover The true purpose and align My entrepreneurial
-        journey with a deeper personal mission that drives
-        long-term success and fulfillment.
-      </p>
-    </div>
-<div class="chapter">
-      <h3><span class="number">02.</span>The Mindset of Great Founders</h3>
-      <p>
-        Explore the mental frameworks, resilience, and
-        growth-oriented thinking that distinguish world-class
-        founders from the rest.
-      </p>
-    </div>
+            <p>
+                We are committed to responsible sourcing, hygienic
+                production, quality control, and continuous improvement
+                throughout our operations.
+            </p>
+        </div>
+    </section>
 
-    <div class="chapter">
-      <h3><span class="number">03.</span>First-Principles Thinking</h3>
-      <p>
-        Learn how to break down complex problems to fundamental
-        truths and rebuild innovative solutions from the ground up.
-      </p>
-    </div>
+    <!-- VISION -->
+    <section id="vision" class="white">
+        <div class="container">
+            <h2>Our Vision</h2>
 
-    <div class="chapter">
-      <h3><span class="number">04.</span>Becoming a Great Manager</h3>
-      <p>
-        Master the essential skills of team leadership,
-        delegation, motivation, and creating high-performing
-        organizations.
-      </p>
-    </div>
+            <p>
+                To become a respected and trusted food brand in Ethiopia
+                and international markets by providing quality products,
+                maintaining high food safety standards, and building lasting
+                relationships with our customers.
+            </p>
+        </div>
+    </section>
 
-    <div class="chapter">
-      <h3><span class="number">05.</span>Leadership and Decision Making</h3>
-      <p>
-        Develop decisive leadership abilities, ethical frameworks,
-        and strategies for making high-stakes choices under
-        uncertainty.
-      </p>
-    </div>
+    <!-- QUALITY -->
+    <section id="quality" class="cream">
+        <div class="container">
+            <h2>Quality &amp; Food Safety</h2>
 
-    <div class="chapter">
-      <h3><span class="number">06.</span>Financial Freedom Without Shortcuts</h3>
-      <p>
-        Build sustainable financial strategies, funding
-        approaches, and wealth management for founders
-        without risky shortcuts.
-      </p>
-    </div>
+            <p>
+                At Golden Honey Foods Industry, quality and food safety
+                are essential to our production operations. We focus on
+                hygienic processing, proper packaging, safe storage,
+                and consistent product quality.
+            </p>
 
-    <div class="chapter">
-      <h3><span class="number">07.</span>Building a Food Company</h3>
-      <p>
-        Practical guidance on launching and scaling a successful
-        food business, from product development to market entry.
-      </p>
-    </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>Quality Standards</h3>
 
-    <div class="chapter">
-      <h3><span class="number">08.</span>Solving Food Waste</h3>
-      <p>
-        Innovative approaches to tackling food waste challenges,
-        creating value from surplus, and building impactful
-        sustainability initiatives.
-      </p>
-    </div>
+                    <ul>
+                        <li>
+                            <strong>HACCP:</strong>
+                            Identifying and controlling food safety hazards.
+                        </li>
+                        <li>
+                            <strong>GMP:</strong>
+                            Good Manufacturing Practices for hygienic production.
+                        </li>
+                        <li>
+                            <strong>ISO 22000:</strong>
+                            A framework for food safety management systems.
+                        </li>
+                        <li>
+                            <strong>Quality Control:</strong>
+                            Checking raw materials, processing, packaging,
+                            and finished products.
+                        </li>
+                        <li>
+                            <strong>Food Safety:</strong>
+                            Proper handling, cleaning, and storage procedures.
+                        </li>
+                    </ul>
+                </div>
 
-    <div class="chapter">
-      <h3><span class="number">09.</span>Innovation Framework</h3>
-      <p>
-        A structured methodology for consistent innovation,
-        R&amp;D processes, and staying ahead in competitive markets.
-      </p>
-    </div>
+                <div class="card">
+                    <h3>Our Commitment</h3>
 
-    <div class="chapter">
-      <h3><span class="number">10.</span>Business Strategy</h3>
-      <p>
-        Crafting winning strategies, competitive analysis,
-        scaling plans, and long-term vision for industry dominance.
-      </p>
-    </div>
+                    <p>
+                        We aim to provide products that meet defined quality
+                        requirements and applicable food safety regulations.
+                    </p>
 
-    <div class="chapter">
-      <h3><span class="number">11.</span>Communication and Negotiation</h3>
-      <p>
-        Hone skills in persuasive communication, stakeholder
-        management, deal-making, and conflict resolution.
-      </p>
-    </div>
+                    <p>
+                        We are committed to improving our processes and
+                        strengthening customer trust through responsible
+                        manufacturing practices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="chapter">
-      <h3><span class="number">12.</span>The Best 100 Questions Every Founder Should Ask</h3>
-      <p>
-        A curated list of powerful questions to guide
-        self-reflection, team alignment, and strategic
-        decision-making.
-      </p>
-    </div>
+    <!-- PRODUCTS AND SERVICES -->
+    <section id="products" class="white">
+        <div class="container">
+            <h2>Our Products &amp; Services</h2>
 
-    <div class="chapter">
-      <h3><span class="number">13.</span>Daily, Weekly, Monthly, and Yearly Systems</h3>
-      <p>
-        Implement effective routines, habits, and review
-        processes for consistent execution and growth.
-      </p>
-    </div>
+            <p>
+                Discover our honey products, crispy potato chips,
+                and food manufacturing services.
+            </p>
 
-    <div class="chapter">
-      <h3><span class="number">14.</span>Books to Read and Why</h3>
-      <p>
-        Recommended reading list with explanations of how each
-        book contributes to founder development.
-      </p>
-    </div>
+            <div class="grid">
+                <!-- HONEY -->
+                <div class="card">
+                    <h3>🍯 Golden Honey</h3>
 
-    <div class="chapter">
-      <h3><span class="number">15.</span>Mistakes That Destroy Businesses</h3>
-      <p>
-        Learn from common pitfalls and failure patterns, and
-        how to avoid them to protect My company.
-      </p>
-    </div>
+                    <p>
+                        We process, filter, and package honey in a range
+                        of sizes for different customer needs.
+                    </p>
 
-    <div class="chapter">
-      <h3><span class="number">16.</span>My Personal Journal and Idea Pages</h3>
-      <p>
-        Tools and prompts for capturing ideas, tracking progress,
-        and maintaining personal clarity.
-      </p>
-    </div>
- <div class="chapter">
-      <h3><span class="number">17.</span>The Legacy I Want to Leave</h3>
-      <p>
-        Reflect on building a lasting impact, succession planning,
-        and the enduring mark I wish to make on the world.
-      </p>
-    </div>
-  </section>
+                    <h4>Available Sizes</h4>
 
-  <!-- ACTION REMINDER -->
-  <section class="reminder">
-    <h3>FOUNDER'S ACTION TAG</h3>
+                    <ul>
+                        <li>100 g Honey Bottle</li>
+                        <li>500 g Honey Bottle</li>
+                        <li>500 g Premium Honey</li>
+                        <li>500 g Squeeze Honey</li>
+                        <li>1 kg Honey</li>
+                        <li>3 kg Honey</li>
+                        <li>5 kg Honey</li>
+                    </ul>
+                </div>
 
-    <p>
-      In the next five years, prioritize defining and documenting
-      the specific legacy I want to leave.
-    </p>
+                <!-- CHIPS -->
+                <div class="card">
+                    <h3>🥔 Gold Chips</h3>
 
-    <p>
-      Review and update this legacy annually to guide all major
-      decisions, business priorities, and personal development.
-    </p>
-  </section>
+                    <p>
+                        We produce crispy potato chips using selected
+                        potatoes and seasonings.
+                    </p>
 
-  <!-- FOUNDER'S COMMITMENT -->
-  <section>
-    <h2 class="section-title">The ENORA Commitment</h2>
+                    <h4>Available Sizes</h4>
 
-    <p>
-      I commit to continuous learning, disciplined execution,
-      ethical leadership, responsible financial decisions,
-      meaningful innovation, and the creation of lasting value.
-    </p>
+                    <ul>
+                      <li>30 g potatto chips</li>
+                        <li>65 g Potato Chips</li>
+                        <li>120 g Potato Chips</li>
+                    </ul>
 
-    <p>
-      I will not measure success only by what I own, but by
-      what I build, whom I develop, what problems I solve,
-      and the positive impact I leave behind.
-    </p>
+                    <h4>Flavors</h4>
 
-    <p><strong>My vision. My responsibility. My legacy.</strong></p>
-  </section>
+                    <ul>
+                        <li>Onion</li>
+                        <li>Tomato</li>
+                        <li>Peri-peri</li>
+                    </ul>
+                </div>
 
-</main>
+                <!-- SERVICES -->
+                <div class="card">
+                    <h3>Our Services</h3>
 
-<footer>
-  <p><strong>ENORA</strong></p>
-  <p>Evolving New Opportunities, Rising Always</p>
-  <p>Think Long-Term. Build with Purpose. Rise Always.</p>
-</footer>
+                    <ul>
+                        <li>Honey processing and packaging</li>
+                        <li>Potato chips manufacturing</li>
+                        <li>Quality-controlled production</li>
+                        <li>Wholesale and retail supply</li>
+                        <li>Product distribution</li>
+                        <li>Food safety and hygiene practices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="cream">
+        <div class="container">
+            <h2>Contact Us</h2>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>📍 Company Location</h3>
+                    <p>Addis Ababa, Ethiopia</p>
+                </div>
+
+                <div class="card">
+                    <h3>🏭 Production Location</h3>
+                    <p>
+                        Kality Sub City<br>
+                        Addis Ababa, Ethiopia
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🏢 Showroom</h3>
+                    <p>
+                        Bole Luky Building<br>
+                        6th Floor<br>
+                        Addis Ababa, Ethiopia
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>📞 Contact Information</h3>
+
+                    <p>
+                        Phone:
+                        <a class="contact-link"
+                           href="tel:+251962932130">
+                            +251 962 932 130
+                        </a>
+                    </p>
+
+                    <p>
+                        Email:
+                        <a class="contact-link"
+                           href="mailto:pappyeabsira@gmail.com">
+                            pappyeabsira@gmail.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2026 <span>NUUF TRADING</span>.
+                All rights reserved.
+            </p>
+        </div>
+    </footer>
 
 </body>
 </html>
